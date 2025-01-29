@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
+import 'package:pay_pocket/utils/alerts/alerts_box.dart';
+import 'package:pay_pocket/utils/constants/colors.dart';
+import 'package:iconsax/iconsax.dart';
 
-class THelperFunctions {
+class PHelperFunctions {
   static Color? getColor(String value) {
     /// Define your product specific colors here and it will match the attribute colors and show specific 🟠🟡🟢🔵🟣🟤
 
@@ -49,24 +52,117 @@ class THelperFunctions {
     showDialog(
       context: Get.context!,
       builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text(title),
-          content: Text(message),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.of(context).pop(),
-              child: const Text('OK'),
-            ),
-          ],
+        return AlertBox(
+          title: title,
+          message: message,
         );
       },
+    );
+  }
+
+  static hideSnackBar() =>
+      ScaffoldMessenger.of(Get.context!).hideCurrentSnackBar();
+
+  static customToast({required message}) {
+    ScaffoldMessenger.of(Get.context!).showSnackBar(
+      SnackBar(
+        elevation: 0,
+        duration: const Duration(seconds: 3),
+        backgroundColor: Colors.transparent,
+        content: Container(
+          padding: const EdgeInsets.all(12.0),
+          margin: const EdgeInsets.symmetric(horizontal: 30),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            color: PHelperFunctions.isDarkMode(Get.context!)
+                ? PColors.darkerGrey.withAlpha(200)
+                : PColors.grey.withAlpha(900),
+          ),
+          child: Center(
+            child: Text(message,
+                style: Theme.of(Get.context!).textTheme.labelLarge),
+          ),
+        ),
+      ),
+    );
+  }
+
+  static successSnackBar({required title, message = '', duration = 1500}) {
+    Get.snackbar(
+      title,
+      message,
+      animationDuration: Duration(milliseconds: 500),
+      isDismissible: true,
+      shouldIconPulse: true,
+      colorText: Colors.white,
+      backgroundColor: PColors.primary,
+      snackPosition: SnackPosition.BOTTOM,
+      duration: Duration(milliseconds: duration),
+      margin: const EdgeInsets.all(10),
+      icon: const Icon(Iconsax.check, color: PColors.white),
+      mainButton: TextButton(
+        onPressed: () {},
+        child: const Icon(
+          Icons.close,
+          color: PColors.white,
+        ),
+      ),
+    );
+  }
+
+  static warningSnackBar({required title, message = '', duration = 1500}) {
+    Get.snackbar(
+      title,
+      message,
+      animationDuration: Duration(milliseconds: 500),
+      isDismissible: true,
+      shouldIconPulse: true,
+      colorText: Colors.white,
+      backgroundColor: PColors.warning,
+      snackPosition: SnackPosition.BOTTOM,
+      duration: Duration(milliseconds: duration),
+      margin: const EdgeInsets.all(10),
+      icon: const Icon(Iconsax.check, color: PColors.white),
+      mainButton: TextButton(
+        onPressed: () {},
+        child: const Icon(
+          Icons.close,
+          color: PColors.white,
+        ),
+      ),
+    );
+  }
+
+  static errorSnackBar(
+      {required title, message = 'Somthing went wrong', duration = 1500}) {
+    Get.snackbar(
+      title,
+      message,
+      animationDuration: Duration(milliseconds: 500),
+      isDismissible: true,
+      shouldIconPulse: true,
+      colorText: Colors.white,
+      backgroundColor: PColors.warning,
+      snackPosition: SnackPosition.BOTTOM,
+      duration: Duration(milliseconds: duration),
+      margin: const EdgeInsets.all(10),
+      icon: const Icon(Iconsax.check, color: PColors.white),
+      mainButton: TextButton(
+        onPressed: () {},
+        child: const Icon(
+          Icons.close,
+          color: PColors.white,
+        ),
+      ),
     );
   }
 
   static void navigateToScreen(BuildContext context, Widget screen) {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (_) => screen),
+      MaterialPageRoute(
+        builder: (_) => screen,
+      ),
     );
   }
 
@@ -94,7 +190,8 @@ class THelperFunctions {
     return MediaQuery.of(Get.context!).size.width;
   }
 
-  static String getFormattedDate(DateTime date, {String format = 'dd MMM yyyy'}) {
+  static String getFormattedDate(DateTime date,
+      {String format = 'dd MMM yyyy'}) {
     return DateFormat(format).format(date);
   }
 
@@ -105,7 +202,8 @@ class THelperFunctions {
   static List<Widget> wrapWidgets(List<Widget> widgets, int rowSize) {
     final wrappedList = <Widget>[];
     for (var i = 0; i < widgets.length; i += rowSize) {
-      final rowChildren = widgets.sublist(i, i + rowSize > widgets.length ? widgets.length : i + rowSize);
+      final rowChildren = widgets.sublist(
+          i, i + rowSize > widgets.length ? widgets.length : i + rowSize);
       wrappedList.add(Row(children: rowChildren));
     }
     return wrappedList;

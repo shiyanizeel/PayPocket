@@ -6,19 +6,21 @@ import '../../constants/sizes.dart';
 class PElevatedButtonTheme {
   PElevatedButtonTheme._(); //To avoid creating instances
 
-
   /* -- Light Theme -- */
-  static final lightElevatedButtonTheme  = ElevatedButtonThemeData(
+  static final lightElevatedButtonTheme = ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
+      // maximumSize: Size(double.infinity, 50),
       elevation: 0,
       foregroundColor: PColors.light,
-      backgroundColor: PColors.primary,
+      backgroundColor: PColors.buttonPrimary,
       disabledForegroundColor: PColors.darkGrey,
       disabledBackgroundColor: PColors.buttonDisabled,
       side: const BorderSide(color: PColors.primary),
-      padding: const EdgeInsets.symmetric(vertical: PSizes.buttonHeight),
-      textStyle: const TextStyle(fontSize: 16, color: PColors.textWhite, fontWeight: FontWeight.w600),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(PSizes.buttonRadius)),
+      padding: const EdgeInsets.symmetric(vertical: PSizes.buttonHeight / 2),
+      textStyle: const TextStyle(
+          fontSize: 14, color: PColors.textWhite, fontWeight: FontWeight.w600),
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(PSizes.buttonRadius)),
     ),
   );
 
@@ -32,8 +34,10 @@ class PElevatedButtonTheme {
       disabledBackgroundColor: PColors.darkerGrey,
       side: const BorderSide(color: PColors.primary),
       padding: const EdgeInsets.symmetric(vertical: PSizes.buttonHeight),
-      textStyle: const TextStyle(fontSize: 16, color: PColors.textWhite, fontWeight: FontWeight.w600),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(PSizes.buttonRadius)),
+      textStyle: const TextStyle(
+          fontSize: 16, color: PColors.textWhite, fontWeight: FontWeight.w600),
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(PSizes.buttonRadius)),
     ),
   );
 }

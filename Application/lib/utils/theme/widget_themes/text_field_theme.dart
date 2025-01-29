@@ -16,14 +16,14 @@ class PTextFormFieldTheme {
         .copyWith(fontSize: PSizes.fontSizeSm, color: PColors.black),
     errorStyle: const TextStyle().copyWith(fontStyle: FontStyle.normal),
     floatingLabelStyle:
-        const TextStyle().copyWith(color: PColors.black.withOpacity(0.8)),
+        const TextStyle().copyWith(color: PColors.black.withAlpha(800)),
     border: const OutlineInputBorder().copyWith(
       borderRadius: BorderRadius.circular(PSizes.inputFieldRadius),
       borderSide: const BorderSide(width: 1, color: PColors.grey),
     ),
     enabledBorder: const OutlineInputBorder().copyWith(
       borderRadius: BorderRadius.circular(PSizes.inputFieldRadius),
-      borderSide: const BorderSide(width: 1, color: PColors.grey),
+      borderSide: const BorderSide(width: 1, color: PColors.borderPrimary),
     ),
     focusedBorder: const OutlineInputBorder().copyWith(
       borderRadius: BorderRadius.circular(PSizes.inputFieldRadius),

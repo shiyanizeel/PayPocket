@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 class PColors {
   // App theme colors
-  static const Color primary = Color(0xFF4b68ff);
+
+  static const Color primary = Color.fromRGBO(51, 149, 255, 1);
   static const Color secondary = Color(0xFFFFE24B);
   static const Color accent = Color(0xFFb0c7ff);
 
@@ -21,12 +22,12 @@ class PColors {
   static Color darkContainer = PColors.white.withOpacity(0.1);
 
   // Button colors
-  static const Color buttonPrimary = Color(0xFF4b68ff);
+  static const Color buttonPrimary = Color.fromRGBO(51, 149, 255, 1);
   static const Color buttonSecondary = Color(0xFF6C757D);
   static const Color buttonDisabled = Color(0xFFC4C4C4);
 
   // Border colors
-  static const Color borderPrimary = Color(0xFFD9D9D9);
+  static const Color borderPrimary = Color.fromRGBO(188, 179, 179, 1);
   static const Color borderSecondary = Color(0xFFE6E6E6);
 
   // Error and validation colors

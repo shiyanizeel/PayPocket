@@ -21,7 +21,7 @@ class PFullScreenLoader {
       builder: (_) => PopScope(
         canPop: false, // Disable popping with the back button
         child: Container(
-          color: THelperFunctions.isDarkMode(Get.context!)
+          color: PHelperFunctions.isDarkMode(Get.context!)
               ? PColors.dark
               : PColors.white,
           width: double.infinity,

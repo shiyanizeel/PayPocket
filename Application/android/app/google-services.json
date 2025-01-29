@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "703394418503",
+    "project_id": "paypocket-804a2",
+    "storage_bucket": "paypocket-804a2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:703394418503:android:ad6a4cf5a64b5d7e214662",
+        "android_client_info": {
+          "package_name": "com.paypocket.pay_pocket"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7tItAP2QE44G4vtGFQZDlX4V_RRAG5uo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

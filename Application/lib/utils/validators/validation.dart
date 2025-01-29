@@ -1,5 +1,4 @@
-
-class TValidator {
+class PValidator {
   static String? validateEmail(String? value) {
     if (value == null || value.isEmpty) {
       return 'Email is required.';
@@ -58,5 +57,27 @@ class TValidator {
     return null;
   }
 
+  static String? validateUserName(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'User name is required.';
+    }
+    if (value.length < 4) {
+      return 'UserName must be grater than 4 chars.';
+    }
+    return null;
+  }
+
 // Add more custom validators as needed for your specific requirements.
+  static String? validateMobileNumber(String? value) {
+    if (value == null || value.trim().isEmpty) {
+      return 'Phone number is required.';
+    }
+    const String indianMobileNumberPattern = r'^[6-9]\d{9}$';
+    final mobileRegX = RegExp(indianMobileNumberPattern);
+    if (!mobileRegX.hasMatch(value.trim())) {
+      return "Mobile number is invalid";
+    }
+
+    return null;
+  }
 }
