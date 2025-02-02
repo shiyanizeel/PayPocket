@@ -7,13 +7,14 @@ class PTextFormFieldTheme {
 
   static InputDecorationTheme lightInputDecorationTheme = InputDecorationTheme(
     errorMaxLines: 3,
+
     prefixIconColor: PColors.darkGrey,
     suffixIconColor: PColors.darkGrey,
     // constraints: const BoxConstraints.expand(height: PSizes.inputFieldHeight),
     labelStyle: const TextStyle()
         .copyWith(fontSize: PSizes.fontSizeMd, color: PColors.black),
     hintStyle: const TextStyle()
-        .copyWith(fontSize: PSizes.fontSizeSm, color: PColors.black),
+        .copyWith(fontSize: PSizes.fontSizeMd, color: PColors.black),
     errorStyle: const TextStyle().copyWith(fontStyle: FontStyle.normal),
     floatingLabelStyle:
         const TextStyle().copyWith(color: PColors.black.withAlpha(800)),
@@ -31,11 +32,11 @@ class PTextFormFieldTheme {
     ),
     errorBorder: const OutlineInputBorder().copyWith(
       borderRadius: BorderRadius.circular(PSizes.inputFieldRadius),
-      borderSide: const BorderSide(width: 1, color: PColors.warning),
+      borderSide: const BorderSide(width: 1, color: PColors.error),
     ),
     focusedErrorBorder: const OutlineInputBorder().copyWith(
       borderRadius: BorderRadius.circular(PSizes.inputFieldRadius),
-      borderSide: const BorderSide(width: 2, color: PColors.warning),
+      borderSide: const BorderSide(width: 2, color: PColors.error),
     ),
   );
 
@@ -43,6 +44,7 @@ class PTextFormFieldTheme {
     errorMaxLines: 2,
     prefixIconColor: PColors.darkGrey,
     suffixIconColor: PColors.darkGrey,
+
     // constraints: const BoxConstraints.expand(height: PSizes.inputFieldHeight),
     labelStyle: const TextStyle()
         .copyWith(fontSize: PSizes.fontSizeMd, color: PColors.white),
@@ -64,11 +66,11 @@ class PTextFormFieldTheme {
     ),
     errorBorder: const OutlineInputBorder().copyWith(
       borderRadius: BorderRadius.circular(PSizes.inputFieldRadius),
-      borderSide: const BorderSide(width: 1, color: PColors.warning),
+      borderSide: const BorderSide(width: 1, color: PColors.error),
     ),
     focusedErrorBorder: const OutlineInputBorder().copyWith(
       borderRadius: BorderRadius.circular(PSizes.inputFieldRadius),
-      borderSide: const BorderSide(width: 2, color: PColors.warning),
+      borderSide: const BorderSide(width: 2, color: PColors.error),
     ),
   );
 }

@@ -9,14 +9,13 @@ class PElevatedButtonTheme {
   /* -- Light Theme -- */
   static final lightElevatedButtonTheme = ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
-      // maximumSize: Size(double.infinity, 50),
-      elevation: 0,
+      fixedSize: Size(PSizes.buttonWidth, PSizes.buttonHeight),
       foregroundColor: PColors.light,
       backgroundColor: PColors.buttonPrimary,
       disabledForegroundColor: PColors.darkGrey,
       disabledBackgroundColor: PColors.buttonDisabled,
       side: const BorderSide(color: PColors.primary),
-      padding: const EdgeInsets.symmetric(vertical: PSizes.buttonHeight / 2),
+      // padding: const EdgeInsets.symmetric(vertical: PSizes.buttonHeight / 2),
       textStyle: const TextStyle(
           fontSize: 14, color: PColors.textWhite, fontWeight: FontWeight.w600),
       shape: RoundedRectangleBorder(
@@ -27,15 +26,16 @@ class PElevatedButtonTheme {
   /* -- Dark Theme -- */
   static final darkElevatedButtonTheme = ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
+      fixedSize: Size(PSizes.buttonWidth, PSizes.buttonHeight),
       elevation: 0,
       foregroundColor: PColors.light,
       backgroundColor: PColors.primary,
       disabledForegroundColor: PColors.darkGrey,
       disabledBackgroundColor: PColors.darkerGrey,
       side: const BorderSide(color: PColors.primary),
-      padding: const EdgeInsets.symmetric(vertical: PSizes.buttonHeight),
+      // padding: const EdgeInsets.symmetric(vertical: PSizes.buttonHeight),
       textStyle: const TextStyle(
-          fontSize: 16, color: PColors.textWhite, fontWeight: FontWeight.w600),
+          fontSize: 14, color: PColors.textWhite, fontWeight: FontWeight.w600),
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(PSizes.buttonRadius)),
     ),
