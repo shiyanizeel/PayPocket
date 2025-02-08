@@ -23,7 +23,7 @@ class TAppTheme {
     primaryColorLight: PColors.textWhite,
     primaryColorDark: PColors.textPrimary,
     chipTheme: PChipTheme.lighPChipTheme,
-    scaffoldBackgroundColor: PColors.white,
+    scaffoldBackgroundColor: PColors.lightContainer,
     appBarTheme: PAppBarTheme.lightAppBarTheme,
     checkboxTheme: PCheckboxTheme.lightCheckboxTheme,
     bottomSheetTheme: PBottomSheetTheme.lightBottomSheetTheme,

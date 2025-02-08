@@ -176,7 +176,9 @@ class _SignupScreenState extends State<SignupScreen> {
               ),
               Spacer(),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  signupCtrl.goToHome();
+                },
                 child: const Text('Continue',
                     style: TextStyle(
                         fontSize: PSizes.fontSizeMd_20,

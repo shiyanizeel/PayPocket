@@ -12,9 +12,9 @@ var http = require('http');
  * Get port from environment and store in Express.
  */
 
-var mongoose = require ('mongoose')
-mongoose.connect("mongodb://127.0.0.1:27017/PetpujaManagement")
-.then(()=>{console.log("connected")})
+var mongoose = require('mongoose')
+mongoose.connect("mongodb+srv://zeelshiyani:IX5V7ZCopGReBp9o@paypocket.cjp7s.mongodb.net/?retryWrites=true&w=majority&appName=PayPocket/Paypocket")
+  .then(() => { console.log("connected") })
 
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
@@ -42,11 +42,15 @@ function normalizePort(val) {
 
   if (isNaN(port)) {
     // named pipe
+    console.log(port);
+
     return val;
   }
 
   if (port >= 0) {
     // port number
+    console.log(port);
+
     return port;
   }
 
